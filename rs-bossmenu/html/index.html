@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RS Bossmenu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app" class="hidden">
+    <div class="window">
+        <aside>
+            <div class="brand">
+                <div class="logo">RS</div>
+                <div>
+                    <strong>Baasmenu</strong>
+                    <small id="jobLabel">Bedrijf</small>
+                </div>
+            </div>
+
+            <button class="tab active" data-view="overview">Overzicht</button>
+            <button class="tab" data-view="employees">Medewerkers</button>
+            <button class="tab" data-view="finance">Financiën</button>
+            <button class="tab" data-view="logs">Logboek</button>
+
+            <button id="close" class="close">Sluiten</button>
+        </aside>
+
+        <main>
+            <div id="notice"></div>
+
+            <section id="overviewView" class="view active">
+                <h1>Bedrijfsoverzicht</h1>
+                <div class="metrics">
+                    <div class="metric">
+                        <span>Bedrijfsrekening</span>
+                        <strong id="balance">€0</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Medewerkers</span>
+                        <strong id="employeeCount">0</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Rangen</span>
+                        <strong id="gradeCount">0</strong>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h2>Nieuwe medewerker</h2>
+                    <div class="row-form">
+                        <label>
+                            Server ID
+                            <input id="hireId" type="number" min="1" placeholder="1">
+                        </label>
+                        <button id="hire">Aannemen</button>
+                    </div>
+                    <p class="muted">De speler moet online en dichtbij staan.</p>
+                </div>
+            </section>
+
+            <section id="employeesView" class="view">
+                <h1>Medewerkers</h1>
+                <div id="employees"></div>
+            </section>
+
+            <section id="financeView" class="view">
+                <h1>Financiën</h1>
+                <div class="finance-grid">
+                    <div class="panel">
+                        <h2>Storten</h2>
+                        <label>
+                            Bedrag
+                            <input id="depositAmount" type="number" min="1">
+                        </label>
+                        <button id="deposit">Storten vanaf bank</button>
+                    </div>
+
+                    <div class="panel">
+                        <h2>Opnemen</h2>
+                        <label>
+                            Bedrag
+                            <input id="withdrawAmount" type="number" min="1">
+                        </label>
+                        <button id="withdraw">Opnemen naar bank</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="logsView" class="view">
+                <h1>Logboek</h1>
+                <div id="logs"></div>
+            </section>
+        </main>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
