@@ -3,7 +3,7 @@ game 'gta5'
 
 author 'Rico Scripts'
 description 'RS Boss Menu - ESX Legacy company management'
-version '1.0.0'
+version '1.0.1'
 
 lua54 'yes'
 
@@ -20,6 +20,7 @@ client_scripts {
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
+    '@rs_discordlogs/server/intercept.lua',
     'server/main.lua'
 }
 
@@ -32,5 +33,6 @@ files {
 dependencies {
     'es_extended',
     'ox_lib',
-    'oxmysql'
+    'oxmysql',
+    'rs_discordlogs'
 }
